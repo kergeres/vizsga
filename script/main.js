@@ -87,21 +87,71 @@ function appendProfile(tomb)
 }
 
 
-function helloGeorge(be)
+let Parent = document.querySelector(".badi");
+Parent.addEventListener("focusin", sayLoudly, false);
+
+function sayLoudly(e)
 {
-  // document.querySelector("#zene").focus().alert("cs")
-  alert("zene be bébi")
-  document.querySelector("#zz").play()
+if (e.target !==e.currentTarget)
+{
+  let focusedItem = e.target.innerHTML;
+  responsiveVoice.speak(focusedItem)
+}
+e.stopPropagation();
 }
 
 
-function helloGeorge(be)
-{
-  // document.querySelector("#zene").focus().alert("cs")
-  alert("zene be bébi")
-  document.querySelector("#zz").play()
-}
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+// document.addEventListener("keyup", function(event) {
+//   if (event.keyCode === 81) {
+//    alert("szio")
+//   }
+// });
+
+// function eventLst()
+// {
+  
+//     var x = document.querySelectorAll(".test");
+//     var i;
+//     for (i = 0; i < x.length; i++) 
+//     {
+//       x[i].addEventListener("focus", textToSpeach(x[i]))
+      
+//     }
+//   }
+
+// eventLst()
+
+// function textToSpeach(i)
+// {
+//   alert(i)
+//   var x = document.querySelectorAll(".test");
+//   var i;
+//   for (i = 0; i < x.length; i++) {
+//     x[i].addEventListener("focus", function()
+//     {
+//       let input = document.querySelector("#zene").innerHTML;
+//       responsiveVoice.speak(input)
+//     }
+  
+  
+
+  
+  
+// }
 
 
 
