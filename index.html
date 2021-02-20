@@ -1,47 +1,62 @@
 <!DOCTYPE html>
 <html lang="en">
-<head> 
+<head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta name="description" content="">
     <meta name="author" content="">
     <title>oktatas</title>
-    <link rel="stylesheet" href="css/main.css">
-    <link rel="shortcut icon" type="image/svg" href="img/tie.jpg"/>
+    <link rel="stylesheet" href="../css/main.css">
+    <link rel="stylesheet" href="../css/auth.css">
+    <link rel="shortcut icon" type="image/svg" href=""/>
     <link rel="stylesheet" href="https://use.typekit.net/dcf6lag.css">
 
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.2/css/all.css" integrity="sha384-vSIIfh2YWi9wW0r9iZe7RJPrKwp6bG+s9QZMoITbCckVJqGCCRhc+ccxNcdpHuYu" crossorigin="anonymous">
+
 </head>
-<body>
-    <main>
-    <header class="header-title">Oktatas</header>
+<body onload="playAudio()">
     
-    <nav class="nnav">
-        <input class="search-input" placeholder="search" onkeyup="searchPrograms(this.value)">
+    <audio autoplay id="audi">
         
-    </nav>
+        <source src="img/Stephen Marley - Mind Control - 01 - Mind Control.mp3">
+      </audio> 
+      
+        <header>
+            <h1 class="header-title">Blind Spot</h1>
+            <div>
+          
+        </div>
+        
+          </header>
+          <!-- <img src="../img/bg-top.jpg" class="bg-top"> -->
+   
     <div class="ham-cont" onclick="hamburgerNav()">
         <label for="mobileicon" class="ham-menu-lineb"></label>
         <label for="mobileicon" class="ham-menu-line"></label>
         <label for="mobileicon" class="ham-menu-linea"></label>
   
         </div>
-<div class="content-container">
-<h1>suits</h1>
-<hr class="hr1">
-<hr class="hr2">
-<h2>Röviden</h2>
-    <p>However, the modern suit jacket is designed to flare out at the hips to create the appearance of a slimmer waist. Button every fastener and the fabric pulls and puckers, disrupting the silhouette and destroying the seams.
+        <main  >
+<div class="content-container badi">
+<h1 onfocus="sayLoudly('Log in')" tabindex="1" class="title">Log in</h1>
+<div class="auth-content-container">
 
-        You run the same risk if you stay buttoned up when sat down. A suit should fit close to your upright body. When you sit, your posture shifts and puts tension on the fastening, which tests your tailor’s stitching.</p>
-<br><p>However, the modern suit jacket is designed to flare out at the hips to create the appearance of a slimmer waist. Button every fastener and the fabric pulls and puckers, disrupting the silhouette and destroying the seams.
+    <label for="email">Email</label>
+    <input autocomplete="email" onfocus="sayLoudly('Type email.')" tabindex="1" id="email">
 
-        You run the same risk if you stay buttoned up when sat down. A suit should fit close to your upright body. When you sit, your posture shifts and puts tension on the fastening, which tests your tailor’s stitching.</p>
+    <label  for="password">Password</label>
+    <input autocomplete="new-password" type="password" onfocus="sayLoudly('Type password.')"  tabindex="1" id="password">
 
-        <h2>Hosszan</h2>
+    <button tabindex="1" onclick="logIn()"  id="login" type="submit">Log in</button>
+    <p tabindex="1">You Dont't have account? Press enter to sign up.</p>
+   
+
+</div> 
 </div>
 
 </main>
-   
-    <script src="script/main.js"></script>
+<script src="https://code.responsivevoice.org/responsivevoice.js?key=rAskuAab"></script>
+    
+    <script src="../script/auth.js"></script>
 </body>
 </html>
