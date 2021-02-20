@@ -1,6 +1,6 @@
 "use strict";
 
-// hamburger navigacio 
+// hamburger menu animation
 let cbOpen = true;
 function hamburgerNav() {
  
@@ -33,6 +33,8 @@ function hamburgerNav() {
     }  
   }
 
+
+// load excercises
 const _programs = [];
 
 async function loadData() {
@@ -44,7 +46,7 @@ console.log(jsonData);
   appendNav(jsonData)
   appendProfile(jsonData)
 }
-loadData();
+
 console.log(_programs);
 
 
@@ -65,31 +67,47 @@ function searchPrograms(value) {
   // appendNav(filteredPrograms);
 }
 
+
+
+
 function appendNav(items)
-{
+  {
     let temlplete = ""
 
     for (let item of items) {
-        temlplete += `<a href="../sub/${item.title}.html"><p>${item.title}</p></a> `
+        temlplete += `<a  href="../sub/${item.title}.html"><p tabindex="2">${item.title}</p></a> `
         
     }
-    document.querySelector(".nnav").innerHTML += temlplete;
+    document.querySelector(".small-content-container").innerHTML = temlplete;
 }
-function appendProfile(tomb)
+
+
+
+//keyboard listener for tab keyboard press
+function tabEventList ()
 {
-    let temlplete = ""
-
-    for (let item of tomb) {
-        temlplete += ` `
-        
-    }
-    document.querySelector(".nnav").innerHTML += temlplete;
+  let i;
+  let x = document.querySelectorAll(".badi");
+      for (i = 0; i < x.length; i++) 
+      {
+        x[i].addEventListener("focusin", sayLoudly, false )
+        // x[i].addEventListener("focusin", whereIsTheFocus )
+      }
 }
+tabEventList ()
 
 
-let Parent = document.querySelector(".badi");
-Parent.addEventListener("focusin", sayLoudly, false);
 
+// this one tells in which poin is the focus on
+function whereIsTheFocus()
+{
+  alert(document.activeElement.innerHTML)
+}
+whereIsTheFocus()
+
+
+
+// Teyt to Speach function
 function sayLoudly(e)
 {
 if (e.target !==e.currentTarget)
@@ -103,6 +121,15 @@ e.stopPropagation();
 
 
 
+//keyboard listener for specific keyboard press
+document.addEventListener("keyup", function(event) {
+  if (event.keyCode === 81) {
+    responsiveVoice.speak("Megnyomtad a Q gombot", "Hungarian Male", {volume: 9})
+  } 
+  // else if (event.keyCode === 87) {
+  //   sayLoudly(document.activeElement)
+  // }
+});
 
 
 
@@ -115,26 +142,58 @@ e.stopPropagation();
 
 
 
-// document.addEventListener("keyup", function(event) {
-//   if (event.keyCode === 81) {
-//    alert("szio")
-//   }
-// });
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// ez nemtudom hogy kell e? ha nem akkor torold ki te majom.. amugy valami navval kapcsoalt
+// function appendProfile(tomb)
+// {
+//     let temlplete = ""
+
+//     for (let item of tomb) {
+//         temlplete += ` `
+        
+//     }
+//     document.querySelector(".nnav").innerHTML += temlplete;
+// }
+// let Parent = document.querySelector(".badi");
+// Parent.addEventListener("focusin", sayLoudly, false);
+
 
 // function eventLst()
 // {
-  
+
 //     var x = document.querySelectorAll(".test");
 //     var i;
 //     for (i = 0; i < x.length; i++) 
 //     {
 //       x[i].addEventListener("focus", textToSpeach(x[i]))
-      
+     
 //     }
 //   }
-
 // eventLst()
-
 // function textToSpeach(i)
 // {
 //   alert(i)
@@ -146,10 +205,6 @@ e.stopPropagation();
 //       let input = document.querySelector("#zene").innerHTML;
 //       responsiveVoice.speak(input)
 //     }
-  
-  
-
-  
   
 // }
 
