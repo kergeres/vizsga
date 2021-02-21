@@ -16,7 +16,7 @@
 </head>
 <body onload="playAudio()">
     
-    <audio autoplay id="audi">
+    <audio autoply id="audi">
         
         <source src="img/Stephen Marley - Mind Control - 01 - Mind Control.mp3">
       </audio> 
@@ -48,7 +48,7 @@
     <input autocomplete="new-password" type="password" onfocus="sayLoudly('Type password.')"  tabindex="1" id="password">
 
     <button tabindex="1" onclick="logIn()"  id="login" type="submit">Log in</button>
-    <p tabindex="1">You Dont't have account? Press enter to sign up.</p>
+    <p onclick="appendSignUp()" onfocus="sayLoudly(this.innerHTML)" tabindex="1">You Dont't have account? Press enter to sign up.</p>
    
 
 </div> 
